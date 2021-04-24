@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @state.name %>
+</p>
+
+<p>
+  <strong>Initials:</strong>
+  <%= @state.initials %>
+</p>
+
+<p>
+  <strong>Cases:</strong>
+  <%= @state.cases %>
+</p>
+
+<p>
+  <strong>Deaths:</strong>
+  <%= @state.deaths %>
+</p>
+
+<p>
+  <strong>Suspects:</strong>
+  <%= @state.suspects %>
+</p>
+
+<p>
+  <strong>Datetime:</strong>
+  <%= @state.datetime %>
+</p>
+
+<%= link_to 'Edit', edit_state_path(@state) %> |
+<%= link_to 'Back', states_path %>
