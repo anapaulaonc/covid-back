@@ -3,10 +3,8 @@ class StatesController < ApplicationController
 
   # GET /states or /states.json
   def index
-    response = HTTParty.get 'https://covid19-brazil-api.now.sh/api/report/v1'
-    json = JSON.parse response
-    State.all
-    render json: state
+    @state = State.all
+    render json: @state
   end
 
   # GET /states/1 or /states/1.json
