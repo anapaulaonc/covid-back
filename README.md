@@ -1,24 +1,22 @@
-# README
+# Documentação
+## _Ruby on Rails_
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Para fazer funcionar no seu PC pela primeira vez:
+```sh
+bundle install
+rails db:create 
+rails db:migrate
+rails db:seed
+```
+## Rodar o programa:
+```sh
+rails s
+```
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Se mudar a seeds e querer repopular o banco:
+```sh
+rails db:drop 
+rails db:migrate
+rails db:seed
+```
