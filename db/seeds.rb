@@ -19,7 +19,7 @@ end
 populating
 
 def populating_bydate(day) 
-    responsed = HTTParty.get "https://covid19-brazil-api.now.sh/api/report/v1/brazil/202003#{day}"
+    responsed = HTTParty.get "https://covid19-brazil-api.now.sh/api/report/v1/brazil/202103#{day}"
     responsed_array = JSON.parse responsed.body
     bydate_states = responsed_array["data"]
     bydate_states.each do |state| 
