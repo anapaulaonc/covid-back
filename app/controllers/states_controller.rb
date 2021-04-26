@@ -9,7 +9,7 @@ class StatesController < ApplicationController
 
   # GET /states/1 or /states/1.json
   def show
-    render json: state
+    render json: @state
   end
 
   # GET /states/new

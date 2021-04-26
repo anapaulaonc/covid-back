@@ -16,5 +16,17 @@ def populating
     end
 
 end 
-
 populating
+
+def populating_bydate(day) 
+    responsed = HTTParty.get "https://covid19-brazil-api.now.sh/api/report/v1/brazil/202003#{day}"
+    responsed_array = JSON.parse responsed.body
+    bydate_states = responsed_array["data"]
+    bydate_states.each do |state| 
+        ByDate.create(name:"#{state["state"]}", initials:"#{state["uf"]}", cases:state["cases"],deaths:state["deaths"], suspects:state["suspects"], datetime:"#{state["datetime"]}" )
+    end
+end 
+
+for i in 1..31
+    populating_bydate(i < 10 ? "0#{i}": i)
+end    

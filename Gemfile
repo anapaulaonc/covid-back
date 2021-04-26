@@ -4,7 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 
 gem 'rails-erd'
+
 gem 'httparty'
+
+gem 'whenever', require: false
 
 gem 'rack-cors'
 

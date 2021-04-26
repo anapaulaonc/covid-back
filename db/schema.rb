@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_24_191707) do
+ActiveRecord::Schema.define(version: 2021_04_26_024337) do
+
+  create_table "brazil_data", force: :cascade do |t|
+    t.string "country"
+    t.integer "cases"
+    t.integer "deaths"
+    t.integer "confirmer"
+    t.date "datetime"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "by_dates", force: :cascade do |t|
+    t.string "name"
+    t.string "initials"
+    t.integer "cases"
+    t.integer "deaths"
+    t.integer "suspects"
+    t.date "datetime"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "states", force: :cascade do |t|
     t.string "name"
