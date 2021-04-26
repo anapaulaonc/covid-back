@@ -30,3 +30,16 @@ end
 for i in 1..31
     populating_bydate(i < 10 ? "0#{i}": i)
 end    
+
+def populating_bymonth(month) 
+    responsem = HTTParty.get "https://covid19-brazil-api.now.sh/api/report/v1/brazil/2020#{month}01"
+    responsem_array = JSON.parse responsem.body
+    bymonth_states = responsem_array["data"]
+    bymonth_states.each do |state| 
+        ByMonth.create(name:"#{state["state"]}", initials:"#{state["uf"]}", cases:state["cases"],deaths:state["deaths"], suspects:state["suspects"], datetime:"#{state["datetime"]}" )
+    end
+end 
+
+for i in 1..12
+    populating_bymonth(i < 10 ? "0#{i}": i)
+end   
